@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color = 'primary' font-family = 'Helvetica'>
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+    <ion-title class = "ion-text-center"> SIMPLE ORDERING </ion-title>
+
+    <ion-button slot = "end" shape = "round" size = "small" href = "./profile">
+      <ion-icon slot="end" name="person-circle-outline" class="larger"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color = 'medium' font-family = 'Helvetica'>
+
+  <h1 class = "ion-text-center">My Orders</h1>
+
+  <div class = "ion-text-center">
+    <ion-item>
+      <ion-label position = "floating">Order Number: </ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-button style="margin:15px;" shape = "round"> Search </ion-button>
+  </div>
+
+  <ion-item-divider color = "primary">
+    <ion-label slot = "start">
+      Order Number
+    </ion-label>
+    <ion-label class = simple-center>
+      Date
+    </ion-label>
+  </ion-item-divider>
+  
+
+  <ion-list color = "primary">
+    <ion-item lines = "full" (click) = "reOrder(i)" *ngFor = "let item of pastOrders; let i = index">
+      <ion-label slot = "start">
+        {{pastOrders[i][0]}}
+      </ion-label>
+      <ion-label class = simple-center>
+        {{pastOrders[i][1]}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+
+
+
+
+  
+
+</ion-content>

@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-toolbar color = 'primary' font-family = 'Helvetica'>
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+    <ion-title class = "ion-text-center"> SIMPLE ORDERING </ion-title>
+
+    <ion-button slot = "end" shape = "round" size = "small" href = "./home">
+      <ion-icon slot="end" name="person-circle-outline" class="larger"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color = 'medium' font-family = 'Helvetica'>
+  <ion-list>
+    
+    <ion-item-divider color = 'primary'>
+      <ion-label>
+        Contact Info:
+      </ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label position = "floating">Backup Email</ion-label>
+      <ion-input type = "email" [(ngModel)] = "user.bemail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position = "floating">Business Phone</ion-label>
+      <ion-input type = "tel" [(ngModel)] = "user.bphone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position = "floating">Mobile Phone</ion-label>
+      <ion-input type = "tel" [(ngModel)] = "user.mphone"></ion-input>
+    </ion-item>
+
+    <ion-item-divider color = 'primary'>
+      <ion-label>
+        Security Questions:
+      </ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label position = "floating">Security Question 1</ion-label>
+      <ion-select [(ngModel)] = "user.security1">
+        <ion-select-option value = '1'>What is your mother's maiden name?</ion-select-option>
+        <ion-select-option value = '2'>What was the name of your first pet?</ion-select-option>
+        <ion-select-option value = '3'>What was your high school maschot?</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)] = "user.securityanswer1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position = "floating">Security Question 2</ion-label>
+      <ion-select [(ngModel)] = "user.security2">
+        <ion-select-option value = '1'>What are the last 4 digits of your SSN?</ion-select-option>
+        <ion-select-option value = '2'>In what city or town was your first job?</ion-select-option>
+        <ion-select-option value = '3'>What is your oldest sibling's middle name?</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)] = "user.securityanswer2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position = "floating">Security Question 3</ion-label>
+      <ion-select [(ngModel)] = "user.security3">
+        <ion-select-option value = '1'>In what city were you born?</ion-select-option>
+        <ion-select-option value = '2'>What is the name of your closest friend?</ion-select-option>
+        <ion-select-option value = '3'>In what city does your nearest sibling live?</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)] = "user.securityanswer3"></ion-input>
+    </ion-item>
+
+    <ion-item-divider color = 'primary'>
+      <ion-label>
+        Change Password:
+      </ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label position = "floating">Current Password</ion-label>
+      <ion-input type = "password" [(ngModel)] = "user.oldpass"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position = "floating">New Password</ion-label>
+      <ion-input type = "password" [(ngModel)] = "user.newpass"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position = "floating">Verify New Password</ion-label>
+      <ion-input type = "password" [(ngModel)] = "user.renewpass"></ion-input>
+    </ion-item>
+
+
+
+
+
+
+
+  </ion-list>
+
+  <div class = "button-center">
+    <ion-button style="margin:10px;" shape = "round" href = "./orders" (click) = "save()"> Save Edits </ion-button>
+    <ion-button style="margin:10px;" shape = "round" href = "./home"> Sign Out </ion-button>
+  </div>
+
+
+
+
+
+
+
+
+</ion-content>

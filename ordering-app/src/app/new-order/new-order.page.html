@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color = 'primary' font-family = 'Helvetica'>
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+    <ion-title class = "ion-text-center"> SIMPLE ORDERING </ion-title>
+
+    <ion-button slot = "end" shape = "round" size = "small" href = "./profile">
+      <ion-icon slot="end" name="person-circle-outline" class="larger"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color = 'medium' font-family = 'Helvetica'>
+
+  <h1 class = "ion-text-center">Create Order</h1>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label position = "floating">Store:</ion-label>
+      <ion-select [(ngModel)] = "store">
+        <ion-item *ngFor = "let item of availableStores; let i = index">
+          <ion-select-option value = {{availableStores[i][0]}}>{{availableStores[i][1]}}</ion-select-option>
+        </ion-item>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label position="floating">Delivery Date:</ion-label>
+      <ion-datetime [min] = "minDate" [max] = "maxDate" [(ngModel)] = "date"></ion-datetime>
+    </ion-item>
+
+  </ion-list>
+
+
+  <div class = "button-center">
+    <ion-button shape = "round" (click) = "beginOrder()"> Begin Order </ion-button>
+  </div>
+
+
+
+
+
+
+</ion-content>

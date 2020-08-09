@@ -1,0 +1,39 @@
+
+<ion-header>
+  <ion-toolbar color = 'primary' font-family = 'Helvetica'>
+    <ion-title class = "ion-text-center">
+      SIMPLE ORDERING
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true" color = 'secondary' font-family = 'Helvetica'>
+
+  <div class = "input">
+  <ion-item>
+    <ion-label position = "floating">Email: </ion-label>
+    <ion-input type="email" [(ngModel)] = "user.email"></ion-input>
+  </ion-item>
+  </div>
+
+  <ion-item>
+    <ion-label position = "floating">Password: </ion-label>
+    <ion-input type="password" [(ngModel)] = "user.password"></ion-input>
+  </ion-item>
+
+
+
+
+
+  <div class = "button-center">
+    <ion-button (click) = "login()" shape = "round" href = "./orders"> Log In </ion-button>
+  </div>
+
+  <div class = "image-center">
+    <ion-img src = "./assets/awg-logo.png" style = "width:50%"></ion-img>
+  </div>
+
+
+</ion-content>

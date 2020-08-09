@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar color = 'primary' font-family = 'Helvetica'>
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+    <ion-title class = "ion-text-center"> SIMPLE ORDERING </ion-title>
+
+    <ion-button slot = "end" shape = "round" size = "small" href = "./profile">
+      <ion-icon slot="end" name="person-circle-outline" class="larger"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color = 'medium' font-family = 'Helvetica'>
+
+  <h1 class = "ion-text-center">Create Order</h1>
+
+  <div class = "button-center">
+    <ion-button style="margin:15px;" shape = "round" href = "./new-order"> Go Back </ion-button>
+    <ion-button style="margin:15px;" shape = "round" (click) = "confirmOrder()"> Confirm </ion-button>
+  </div>
+
+
+  <ion-item>
+    <ion-label position = "floating"> Item Code: </ion-label>
+    <ion-input [(ngModel)] = "order.icode" clear-input = "true"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position = "floating"> Quantity:  </ion-label>
+    <ion-input [(ngModel)] = "order.quantity" clear-input = "true" type = "number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position = "floating"> Breaker Code:  </ion-label>
+    <ion-input [(ngModel)] = "order.bcode" clear-input = "true" type = "number"></ion-input>
+  </ion-item>
+
+  <div class = "button-center">
+    <ion-button (click) = "add()" shape = "round"> Add Item </ion-button>
+  </div>
+
+  <ion-item-divider color = "primary">
+    <ion-label slot = "start">
+      Item Code
+    </ion-label>
+    <ion-label class = "simple-center">
+      Quantity
+    </ion-label>
+    <ion-label slot = "end" style="margin:15px;">
+      Breaker Code
+    </ion-label>
+  </ion-item-divider>
+  
+
+
+  <ion-list color = "primary">
+    <ion-item-sliding *ngFor = "let item of items; let i = index">
+      <ion-item lines = "full">
+        <ion-label slot = "start">
+          {{items[i][0]}}
+        </ion-label>
+        <ion-label>
+          {{items[i][1]}}
+        </ion-label>
+        <ion-label slot = "end" style="margin:15px;">
+          {{items[i][2]}}
+        </ion-label>
+      </ion-item>
+    <ion-item-options side ="start" (ionSwipe) = "delete(i)">
+      <ion-item-option color = "danger" (click) = "delete(i)" expandable></ion-item-option>
+    </ion-item-options>
+    <ion-item-options side ="end" (ionSwipe) = "delete(i)">
+      <ion-item-option color = "danger" (click) = "delete(i)" expandable></ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+  </ion-list>
+
+
+
+</ion-content>
